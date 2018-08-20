@@ -6,6 +6,7 @@ before_build:
 - md ..\build\
 - cd ..\build\
 - cmake ..\audio-processing-module
+- tree .
 
 #build:
 
