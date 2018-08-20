@@ -1,0 +1,14 @@
+image:
+- Visual Studio 2015
+- Ubuntu
+
+
+before_build:
+- mkdir ../build/
+- cd ../build/
+- cmake ../audio-processing-module
+
+build_script:
+- make -j8
+
+
