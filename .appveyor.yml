@@ -3,11 +3,17 @@ image:
 #- Ubuntu
 
 before_build:
-- md ..\build\
-- cd ..\build\
+- mkdir ..\build\ && cd ..\build\
 - cmake ..\audio-processing-module
-- tree .
 
-#build:
+build:
+  project: ..\build\apm.sln
+  parallel: true
+  #verbosity: quiet
 
+after_build:
+- cd ..\audio-processing-module
+- 7z a Debug.VS2015.7z ..\build\src\Debug
 
+artifacts:
+- path: .\Debug.VS2015.7z
