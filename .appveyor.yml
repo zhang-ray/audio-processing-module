@@ -4,16 +4,11 @@ image:
 
 before_build:
 - mkdir ..\build\ && cd ..\build\
-- cmake ..\audio-processing-module
+#- cmake ..\audio-processing-module
+- cmake ..\audio-processing-module\independent_vad\
 
 build:
-  project: ..\build\apm.sln
+  #project: ..\build\apm.sln
+  project: ..\build\independent_vad.sln
   parallel: true
   #verbosity: quiet
-
-after_build:
-- cd ..\audio-processing-module
-- 7z a Debug.VS2015.7z ..\build\src\Debug
-
-artifacts:
-- path: .\Debug.VS2015.7z
