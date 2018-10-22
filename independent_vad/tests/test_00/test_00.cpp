@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include "webrtc_vad.hpp"
 #include <fstream>
 #include <vector>
