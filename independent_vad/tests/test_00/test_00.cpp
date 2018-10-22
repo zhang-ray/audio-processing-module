@@ -30,12 +30,33 @@ int main(int argc, char *argv[]){
         return -1;
     }
 
-    for (int index = 0;!ifs.eof(); index++){
-        ifs.read((char *)(buffer.data()), buffer.size()*sizeof(short));
-        auto result = WebRtcVad_Process(vad, 16000, buffer.data(), buffer.size());
-        std::cout << "offset(second):\t" << index*0.01
-                  << "\t" <<((result==1)?"active":"inactive")
-                  << std::endl;
+
+    {
+        std::vector<bool> result;
+        for (int index = 0;!ifs.eof(); index++){
+            ifs.read((char *)(buffer.data()), buffer.size()*sizeof(short));
+            result.push_back(1==WebRtcVad_Process(vad, 16000, buffer.data(), buffer.size()));
+        }
+
+
+        bool started =false;
+        int lastStartIndex = 0;
+        for (auto index = 1; index < result.size(); index++){
+            if (started){
+                if ((!result[index])&&result[index-1]){
+                    // end
+                    started = false;
+                    std::cout << "active section(second):\t[" << (float)lastStartIndex/100 << "\t:\t" << (float)index/100<<"]" << std::endl;
+                }
+            }
+            else {
+                if (result[index]&&(!result[index-1])){
+                    started = true;
+                    lastStartIndex = index;
+                }
+            }
+        }
+
     }
 
     return 0;
