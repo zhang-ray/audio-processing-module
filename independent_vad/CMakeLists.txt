@@ -4,8 +4,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 project(independent_vad)
 
-include_directories(.)
-include_directories(./include)
+include_directories(src)
 
 
 add_definitions(-DUNICODE)
@@ -81,3 +80,9 @@ file(GLOB_RECURSE FILES_INCLUDE src/*.hpp)
 
 ADD_LIBRARY(${PROJECT_NAME} SHARED ${FILES_INCLUDE} ${FILES_SOURCES})
 target_link_libraries(${PROJECT_NAME})
+
+
+
+add_executable(test_00 tests/test_00/test_00.cpp)
+target_link_libraries(test_00 ${PROJECT_NAME} pthread)
+
