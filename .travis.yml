@@ -14,8 +14,8 @@ deploy:
   provider: releases
   api_key: $GITHUB_OAUTH_TOKEN
   file:
-    - ./independent_vad-build/libindependent_vad.so
-    - ./independent_vad-build/libindependent_vad.dylib
+    - ./independent_vad-build/vad.so
+    - ./independent_vad-build/vad.dylib
   skip_cleanup: true
   on:
     tags: true
