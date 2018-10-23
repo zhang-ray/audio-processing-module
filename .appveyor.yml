@@ -15,17 +15,3 @@ build:
   project: ..\build\independent_vad.sln
   parallel: true
   #verbosity: quiet
-
-after_build:
-- xcopy: C:\projects\build\src\Release\vad.dll C:\projects\audio-processing-module\
-
-deploy:
-  provider: GitHub
-  auth_token:
-    secure: PiQDTyaNV3HdYRawTlwyD/bsMbpBg2Kx+/BEUEz9qOasvZlDBmxj3tFB0bNYwXIc
-  artifact: vad.dll
-  draft: false
-  prerelease: false
-  on:
-    branch: master                 # release from master branch only
-    appveyor_repo_tag: true        # deploy on tag push only
