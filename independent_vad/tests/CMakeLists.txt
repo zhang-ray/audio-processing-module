@@ -2,9 +2,10 @@ cmake_minimum_required(VERSION 3.5.0)
 
 set(CMAKE_CXX_STANDARD 14)
 
-if(WIN32)
-    add_definitions(-DWEBRTC_DLL)
-endif(WIN32)
+# now we use STATIC lib, so let's remove WEBRTC_EXPORT and WEBRTC_DLL
+#if(WIN32)
+#    add_definitions(-DWEBRTC_DLL)
+#endif(WIN32)
 
 include_directories(../src)
 add_executable(test_00 test_00/test_00.cpp)

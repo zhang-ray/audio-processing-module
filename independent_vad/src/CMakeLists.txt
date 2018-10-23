@@ -73,9 +73,12 @@ add_definitions(-D__STDC_FORMAT_MACROS)
 add_definitions(-DDYNAMIC_ANNOTATIONS_ENABLED=1)
 add_definitions(-DWTF_USE_DYNAMIC_ANNOTATIONS=1)
 add_definitions(-D_CRT_NONSTDC_NO_DEPRECATE)
-if (WIN32)
-    add_definitions(-DWEBRTC_EXPORT)
-endif(WIN32)
+
+
+# now we use STATIC lib, so let's remove WEBRTC_EXPORT and WEBRTC_DLL
+#if (WIN32)
+#    add_definitions(-DWEBRTC_EXPORT)
+#endif(WIN32)
 
 file(GLOB_RECURSE FILES_SOURCES *.cpp)
 file(GLOB_RECURSE FILES_INCLUDE *.hpp)
