@@ -5,7 +5,4 @@ language: cpp
 sudo: required
 
 script:
-  - mkdir independent_vad-build
-  - cd independent_vad-build
-  - cmake ../independent_vad
-  - make -j8
+  - mkdir build && cd build && cmake .. && make -j8

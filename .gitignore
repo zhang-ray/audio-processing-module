@@ -33,5 +33,9 @@
 
 
 # IDE
+.vscode
 CMakeLists.txt.user
 *-build
+
+
+build

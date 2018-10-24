@@ -3,15 +3,12 @@ image:
 #- Ubuntu
 
 before_build:
-- mkdir ..\build\ && cd ..\build\
-#- cmake ..\audio-processing-module
-- cmake ..\audio-processing-module\independent_vad\
+- mkdir build && cd build && cmake ..
 
 configuration:
   - Release
 
 build:
-  #project: ..\build\apm.sln
-  project: ..\build\independent_vad.sln
+  project: build\apm.sln
   parallel: true
   #verbosity: quiet
