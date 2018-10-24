@@ -13,7 +13,7 @@
 
 #ifndef WEBRTC_MODULES_AUDIO_PROCESSING_UTILITY_DELAY_ESTIMATOR_WRAPPER_H_
 #define WEBRTC_MODULES_AUDIO_PROCESSING_UTILITY_DELAY_ESTIMATOR_WRAPPER_H_
-
+#include <cstdint>
 
 // Releases the memory allocated by WebRtc_CreateDelayEstimatorFarend(...)
 void WebRtc_FreeDelayEstimatorFarend(void* handle);
