@@ -17,10 +17,6 @@
 
 typedef struct NsxHandleT NsxHandle;
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 /*
  * This function creates an instance of the fixed point Noise Suppression.
  */
@@ -106,8 +102,5 @@ const uint32_t* WebRtcNsx_noise_estimate(const NsxHandle* nsxInst,
  */
 size_t WebRtcNsx_num_freq();
 
-#ifdef __cplusplus
-}
-#endif
 
 #endif  // WEBRTC_MODULES_AUDIO_PROCESSING_NS_NOISE_SUPPRESSION_X_H_

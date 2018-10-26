@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5.0)
-project(apm) # audio processing module
+project(audio-processing-module) # audio processing module
 #add_subdirectory (src)
 add_subdirectory(independent_vad)
 add_subdirectory(independent_ns)

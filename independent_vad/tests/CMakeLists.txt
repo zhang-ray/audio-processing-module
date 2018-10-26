@@ -8,12 +8,12 @@ set(CMAKE_CXX_STANDARD 14)
 #endif(WIN32)
 
 include_directories(../src)
-add_executable(test_00 test_00/test_00.cpp)
+add_executable(test_vad_00 test_00/test_00.cpp)
 
 if(WIN32)
-        target_link_libraries(test_00 vad)
+        target_link_libraries(test_vad_00 vad)
 else(WIN32)
-        target_link_libraries(test_00 vad pthread)
+        target_link_libraries(test_vad_00 vad pthread)
 endif(WIN32)
 
 

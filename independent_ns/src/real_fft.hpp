@@ -16,6 +16,7 @@
 // for OpenMax FFT in ARM, it is 12;
 // WebRTC APM uses orders of only 7 and 8.
 enum {kMaxFFTOrder = 10};
+#include <cstdint>
 
 struct RealFFT;
 
