@@ -41,7 +41,7 @@ int main(int argc, char *argv[]){
 
         bool started =false;
         int lastStartIndex = 0;
-        for (auto index = 1; index < result.size(); index++){
+        for (auto index = 1u; index < result.size(); index++){
             if (started){
                 if ((!result[index])&&result[index-1]){
                     // end
