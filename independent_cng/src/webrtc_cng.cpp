@@ -372,6 +372,8 @@ size_t ComfortNoiseEncoder::Encode(const std::vector<int16_t> &speech,
 
 		const size_t output_coefs = enc_nrOfCoefs_ + 1;
 
+		output.resize(output_coefs);
+
 		{
 			output[0] = (uint8_t)index;
 
