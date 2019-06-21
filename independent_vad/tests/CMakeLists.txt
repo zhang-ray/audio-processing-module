@@ -10,10 +10,10 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(../src)
 add_executable(test_vad_00 test_00/test_00.cpp)
 
-if(WIN32)
-        target_link_libraries(test_vad_00 vad)
-else(WIN32)
-        target_link_libraries(test_vad_00 vad pthread)
-endif(WIN32)
 
+if (UNIX AND CMAKE_SYSTEM_PROCESSOR MATCHES "(x86)|(X86)|(amd64)|(AMD64)")
+    target_link_libraries(test_vad_00 vad pthread)
+else()
+    target_link_libraries(test_vad_00 vad)
+endif()
 
