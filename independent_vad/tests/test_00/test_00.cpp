@@ -59,5 +59,7 @@ int main(int argc, char *argv[]){
 
     }
 
+    WebRtcVad_Free(vad);
+
     return 0;
 }
