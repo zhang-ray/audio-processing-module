@@ -12,6 +12,7 @@
  * The core AEC algorithm, SSE2 version of speed-critical functions.
  */
 
+#ifndef ANDROID
 #include <emmintrin.h>
 #include <math.h>
 #include <string.h>  // memset
@@ -735,3 +736,5 @@ void WebRtcAec_InitAec_SSE2(void) {
   WebRtcAec_WindowData = WindowDataSSE2;
 }
 }  // namespace webrtc
+
+#endif // ANDROID
